@@ -148,33 +148,108 @@
 
 // console.log(person1.sayName.apply(person2, ["Dhaka", "Bangladesh"]));
 
-const person1 = {
-  name: "Pedro",
-  surname: "Sanchez",
-  sayName: function () {
-    return this.name + " " + this.surname;
-  },
-};
+// const person1 = {
+//   name: "Pedro",
+//   surname: "Sanchez",
+//   sayName: function () {
+//     return this.name + " " + this.surname;
+//   },
+// };
 
-const person2 = {
-  name: "Jimena",
-  surname: "Juarez",
-};
+// const person2 = {
+//   name: "Jimena",
+//   surname: "Juarez",
+// };
 
-const person3 = {
-  name: "Arshad",
-  surname: "Shad",
-  testFuncforTest: function testFunc() {
-    console.log(this);
-    return this;
-  },
-};
+// const person3 = {
+//   name: "Arshad",
+//   surname: "Shad",
+//   testFuncforTest: function testFunc() {
+//     console.log(this);
+//     return this;
+//   },
+// };
 
 // const sayPerson2Name = person1.sayName.bind(person3);
 
 // console.log(sayPerson2Name());
 // console.log(person1.sayName());
 
-const sayPerson2Name = person3.testFuncforTest.bind(person2);
+// const sayPerson2Name = person3.testFuncforTest.bind(person2);
 
-console.log(sayPerson2Name());
+// console.log(sayPerson2Name());
+
+// function Car(make, model, year, price) {
+//   this.make = make;
+//   this.model = model;
+//   this.year = year;
+//   this.price = price;
+//   this.greet = function greetPerson() {
+//     console.log(
+//       `Hello there, ${this.make}, your model is ${this.model} and you're from ${this.year}`
+//     );
+//   };
+// }
+
+// const car1 = new Car("Eagle", "Talon TSi", 1993);
+
+// const car2 = new Car("Toyota", "Toyota TSi", 2023, 40000);
+
+// console.log(
+//   `Your car is ${car2.make}, model is ${car2.model} and it was built in ${car2.year} the price is ${car2.price} dollars`
+// );
+
+// const carGreet = new Car("Toyota", "Toyota TSi", 2023, 40000);
+
+// carGreet.greet();
+
+// Expected output: "Eagle"
+
+// class Person {
+//   constructor(name, age, address) {
+//     this.name = name;
+//     this.age = age;
+//     this.address = address;
+//   }
+//   greetPerson() {
+//     console.log(
+//       `Hello there, ${this.name}, your age is ${this.age} and you're from ${this.address}`
+//     );
+//   }
+// }
+
+// const p = new Person("Caroline", 20, "Dhaka, Bangladesh");
+// const p2 = new Person("Arshad", 25, "Dhaka, Bangladesh");
+// p.greetPerson(); // Hello, my name is Caroline
+
+// p2.greetPerson();
+
+function Car() {}
+const car1 = new Car();
+const car2 = new Car();
+const car3 = new Car();
+
+console.log(car1.color); // undefined
+
+Car.prototype.color = "Blue";
+Car.prototype.brand = "Toyota";
+console.log(car1.color);
+
+car1.color = "black";
+console.log(car1.color);
+
+car2.color = "red";
+car3.color = "white";
+
+car1.brand = "Xiaomi";
+
+console.log(Object.getPrototypeOf(car1).color);
+console.log(Object.getPrototypeOf(car2).color);
+console.log(car1.color);
+console.log(car2.color);
+console.log(car3.color);
+console.log(car2.brand);
+console.log(car3.brand);
+console.log(car1.brand);
+
+console.log(Object.getPrototypeOf(car1).color);
